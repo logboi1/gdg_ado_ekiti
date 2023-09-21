@@ -10,6 +10,12 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Debugging
+      - run: |
+          echo "GitHub Repository: $GITHUB_REPOSITORY"
+          echo "GitHub Token: ${{ secrets.GITHUB_TOKEN }}"
+          echo "Firebase Service Account JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEVFEST23 }}"
+          echo "Firebase Project ID: ${{ secrets.projectId }}"
       - uses: actions/checkout@v3
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
